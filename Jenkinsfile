@@ -1,9 +1,5 @@
 pipeline {
-	environment {
-        PATH = "$PATH:/usr/local/bin"
-    }
-    
-    agent { label 'docker' }
+    agent { label 'docker' && 'docker-compose' }
     
     stages {
 
