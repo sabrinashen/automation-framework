@@ -6,6 +6,13 @@ pipeline {
     }
     
     stages {
+    		stage('Restart docker-compose with new version'){
+            steps{
+                script {
+                    sh 'docker-compose --version'
+                }
+            }
+        }
 
         stage('selenium grid up') {
             steps {
