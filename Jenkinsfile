@@ -9,6 +9,7 @@ pipeline {
 
         stage('selenium grid up') {
             steps {
+            		sh 'echo $PATH'
                 sh 'echo "setup selenium grid"'
                 sh 'docker-compose up -d'
                 sh 'docker-compose scale chrome=4'
