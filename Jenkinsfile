@@ -1,8 +1,10 @@
 pipeline {
-    agent { label 'docker' }
-    environment {
+	environment {
         PATH = "$PATH:/usr/local/bin"
     }
+    
+    agent { label 'docker' }
+    
     stages {
 
         stage('selenium grid up') {
