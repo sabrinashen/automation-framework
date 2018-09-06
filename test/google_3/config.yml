@@ -1,0 +1,20 @@
+plan_name: "Auto test cases for Soccer_Add new member"
+owner: subrina.shen@activenetwork.com
+status: completed
+created_dt: 2016-07-19
+version: 1
+last_modified_dt: 
+timeout: 300
+keywords:
+actions: google_3
+
+member_info:
+  second_guardian_first_name: father
+  second_guardian_last_name: auto
+  second_guardian_email: ""
+  child_first_name: boy
+  child_last_name: auto
+  child_birthday_month: January
+  child_birthday_day: 1
+  child_birthday_year: ""
+  child_gender: Male
