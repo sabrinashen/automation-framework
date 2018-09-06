@@ -1,9 +1,0 @@
-
-Failed examples:
-
-[31mrspec ./test/google_3/google_3_spec.rb:5[0m [36m# google_3 open home page[0m
-
-Failed examples:
-
-[31mrspec ./test/google_4/google_4_spec.rb:6[0m [36m# google_4 open home page[0m
-[31mrspec ./test/google_4/google_4_spec.rb:15[0m [36m# google_4 print url[0m

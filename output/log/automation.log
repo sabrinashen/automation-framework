@@ -1,7 +1,0 @@
-# Logfile created on 2018-08-15 11:45:38 -0700 by logger.rb/47272
-I, [2018-08-15T11:45:40.231568 #39516]  INFO -- : Execute - Navigate to URL https://www.google.com/ - success.
-I, [2018-08-15T11:46:26.832352 #39565]  INFO -- : Execute - Navigate to URL https://www.google.com/ - success.
-I, [2018-08-15T11:47:49.870353 #39607]  INFO -- : Execute - Navigate to URL https://www.google.com/ - success.
-I, [2018-08-28T14:56:49.256385 #71654]  INFO -- : Execute - Navigate to URL https://www.google.com/ - success.
-I, [2018-08-28T15:05:06.002453 #71801]  INFO -- : Execute - Navigate to URL https://www.google.com/ - success.
-I, [2018-08-28T15:17:05.795654 #71915]  INFO -- : Execute - Navigate to URL https://www.google.com/ - success.
