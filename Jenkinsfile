@@ -6,16 +6,11 @@ pipeline {
     }
     
     stages {
-    		stage('Restart docker-compose with new version'){
-            steps{
-                script {
-                    sh 'docker-compose --version'
-                }
-            }
-        }
 		
 		stage('docker-compose up') {
-			step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])
+			steps {
+				step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])
+			}
 		}
         
         stage('run script') {
