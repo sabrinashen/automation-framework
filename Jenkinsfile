@@ -1,6 +1,10 @@
 pipeline {
     agent { label 'docker' && 'docker-compose' }
     
+    environment {
+        PATH = "$PATH:/usr/local/bin"
+    }
+    
     stages {
 
         stage('selenium grid up') {
