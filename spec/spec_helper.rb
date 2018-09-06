@@ -11,7 +11,7 @@ RSpec.configure do |config|
       hub_url = "http://localhost:4444/wd/hub"
       browser = "chrome"
       @driver = Selenium::WebDriver.for(:remote, url: "#{hub_url}", desired_capabilities: browser.to_sym)
-      # $logger = Logger.new(@driver.session_id)
+      # $logger = LoggerS.new(@driver.session_id)
     rescue Exception => e
       p e
     end
