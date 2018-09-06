@@ -1,6 +1,12 @@
 pipeline {
     agent { label 'docker' }
     stages {
+    		stage('set docker compose path') {
+            withEnv(["PATH=$PATH:~/.local/bin"]){
+                    sh "bash test.sh"
+                }
+        }   
+        
         stage('selenium grid up') {
             steps {
                 sh 'echo "setup selenium grid"'
