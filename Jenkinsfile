@@ -13,15 +13,10 @@ pipeline {
                 }
             }
         }
-
-        stage('selenium grid up') {
-            steps {
-            		sh 'echo $PATH'
-                sh 'echo "setup selenium grid"'
-                sh 'docker-compose up -d'
-                sh 'docker-compose scale chrome=4'
-            }
-        }
+		
+		stage('docker-compose up') {
+			step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])
+		}
         
         stage('run script') {
         		steps {
