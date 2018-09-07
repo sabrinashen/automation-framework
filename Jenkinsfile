@@ -17,9 +17,7 @@ pipeline {
         
         stage('run script') {
         		steps {
-        			step([$class: 'DockerBuilderControl', option: <object of type com.nirima.jenkins.plugins.docker.builder.DockerBuilderControlOptionRun>])
 				step([$class: 'DockerBuilderControl', option: [$class: 'DockerBuilderControlOptionStart', cloudName: '', containerId: 'selenium-hub']])
-				
         		}
         }
         
