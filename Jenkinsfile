@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         PATH = "$PATH:/usr/local/bin"
+        PATH = "$PATH:/Users/ericyang/.rbenv/shims"
     }
     
     stages {
