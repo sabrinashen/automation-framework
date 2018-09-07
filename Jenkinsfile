@@ -15,6 +15,7 @@ pipeline {
         
         stage('run script') {
         		steps {
+        			sh 'rbenv shell 2.2.2'
         			sh 'bundle exec parallel_rspec test/'
         		}
         }
