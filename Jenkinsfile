@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'docker' }
+  agent { label 'first_docker' }
   //agent any
   environment {
     // docker path: /usr/local/bin
