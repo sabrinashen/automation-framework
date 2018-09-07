@@ -17,14 +17,16 @@ pipeline {
         
         stage('run script') {
         		steps {
-        			sh 'bundle exec parallel_rspec test/'
+        			step([$class: 'DockerBuilderControl', option: <object of type com.nirima.jenkins.plugins.docker.builder.DockerBuilderControlOptionRun>])
+				step([$class: 'DockerBuilderControl', option: [$class: 'DockerBuilderControlOptionStart', cloudName: '', containerId: 'selenium-hub']])
+				
         		}
         }
         
         stage('selenium grid down') {
         		steps {
         			sh 'echo "shut down selenium grid"'
-        			sh 'docker-compose down'
+        			step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StopAllServices'], useCustomDockerComposeFile: true])
         		}
         
         }
