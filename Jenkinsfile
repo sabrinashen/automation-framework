@@ -17,7 +17,7 @@ pipeline {
         
         stage('run script') {
         		steps {
-				step([$class: 'DockerBuilderControl', option: [$class: 'DockerBuilderControlOptionStart', cloudName: '', containerId: 'selenium-hub']])
+				sh 'echo ${pwd()}'
         		}
         }
         
