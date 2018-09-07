@@ -2,7 +2,9 @@ pipeline {
     agent any
     
     environment {
-        PATH = "$PATH:/usr/local/bin"
+    		// docker path: /usr/local/bin
+    		// bundle path: /Users/ericyang/.rbenv/shims
+        PATH = "$PATH:/usr/local/bin:/Users/ericyang/.rbenv/shims"
     }
     
     stages {
