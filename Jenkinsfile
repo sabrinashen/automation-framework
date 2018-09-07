@@ -2,14 +2,15 @@ pipeline {
     agent { label 'docker' && 'docker-compose' }
     
     environment {
-        PATH = "$PATH:/usr/local/bin:/Users/ericyang/.rbenv/shims"
+        PATH = "$PATH:/usr/local/bin:/Users/ericyang/.rbenv/shims:$JENKINS_HOME/tools/chromedriver"
     }
     
     stages {
 		
 		stage('docker-compose up') {
 			steps {
-				step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartAllServices'], useCustomDockerComposeFile: true])
+				step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 5, service: 'chrome'], useCustomDockerComposeFile: true])
+				sh 'docker ps -a'
 			}
 		}
         
