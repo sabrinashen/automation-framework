@@ -2,8 +2,7 @@ pipeline {
     agent { label 'docker' && 'docker-compose' }
     
     environment {
-        PATH = "$PATH:/usr/local/bin"
-        PATH = "$PATH:/Users/ericyang/.rbenv/shims"
+        PATH = "$PATH:/usr/local/bin:/Users/ericyang/.rbenv/shims"
     }
     
     stages {
