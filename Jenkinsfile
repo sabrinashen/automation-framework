@@ -18,8 +18,8 @@ pipeline {
     stage('run script') {
       steps {
         sh 'echo "run script - null steps"'
-        // sh 'bundle install'
-        // sh 'bundle exec parallel_rspec test/'
+        sh 'bundle install'
+        sh 'bundle exec parallel_rspec test/'
       }
     }
     
