@@ -18,6 +18,7 @@ pipeline {
         stage('run script') {
         		steps {
 				sh 'echo "run script - null steps"'
+				sh 'docker ps -a'
         		}
         }
         
