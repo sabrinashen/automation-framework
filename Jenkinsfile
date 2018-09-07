@@ -1,6 +1,6 @@
 pipeline {
-  agent { label 'docker' }
-  
+  //agent { label 'docker' }
+  agent any
   environment {
     // docker path: /usr/local/bin
     // bundle path: /Users/ericyang/.rbenv/shims
