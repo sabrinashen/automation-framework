@@ -17,7 +17,7 @@ pipeline {
         
         stage('run script') {
         		steps {
-				sh 'echo ${pwd()}'
+				sh 'run script - null steps'
         		}
         }
         
