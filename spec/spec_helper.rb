@@ -8,7 +8,6 @@ RSpec.configure do |config|
   config.before(:each) do
     # @driver = Selenium::WebDriver.for :chrome
     begin
-      sleep 100
       hub_url = "http://localhost:4444/wd/hub"
       browser = "chrome"
       @driver = Selenium::WebDriver.for(:remote, url: "#{hub_url}", desired_capabilities: browser.to_sym)

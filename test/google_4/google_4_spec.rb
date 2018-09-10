@@ -8,7 +8,7 @@ describe "google_4" do
     @driver.find_element(id: 'lst-ib').send_keys "SABRINA"
     @driver.find_element(id: 'lst-ib').send_keys :tab
     @driver.find_element(name: 'btnK').click
-    sleep 7
+    sleep 5
     p @driver.find_element(xpath: '//h3/a').text
   end
   
@@ -17,7 +17,7 @@ describe "google_4" do
     @driver.find_element(id: 'lst-ib').send_keys "ANNA"
     @driver.find_element(id: 'lst-ib').send_keys :tab
     @driver.find_element(name: 'btnK').click
-    sleep 7
+    sleep 5
     p @driver.find_element(xpath: '//h3/a').text
   end
   
