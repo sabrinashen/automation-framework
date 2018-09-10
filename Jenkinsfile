@@ -37,8 +37,8 @@ pipeline {
   
   post {
 	always {
-		echo 'selenium grid down'
-		sudo docker-compose down
+		sh 'echo "selenium grid down"'
+		sh 'sudo docker-compose down'
   	}
   }
 }
