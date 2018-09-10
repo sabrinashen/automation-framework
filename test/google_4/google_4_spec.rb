@@ -18,7 +18,7 @@ describe "google_4" do
     @driver.find_element(id: 'lst-ib').send_keys :tab
     @driver.find_element(name: 'btnK').click
     sleep 5
-    p @driver.find_element(xpath: '//h3/a').text
+    p @driver.find_element(xpath: '//h3/a/ttt').text
   end
   
 end
