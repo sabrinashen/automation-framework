@@ -21,6 +21,7 @@ pipeline {
       	//catchError {
             sh 'bundle install'
         		sh 'bundle exec parallel_rspec test/'
+        		archiveArtifacts artifacts: 'script/**', fingerprint: true
         //}
         //echo currentBuild.result
       }
