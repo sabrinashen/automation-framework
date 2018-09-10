@@ -18,20 +18,27 @@ pipeline {
       
     stage('run script') {
       steps {
-      	catchError {
+      	//catchError {
             sh 'bundle install'
         		sh 'bundle exec parallel_rspec test/'
-        }
+        //}
         //echo currentBuild.result
       }
     }
     
-     stage('selenium grid down') {
-       steps {
-         sh 'echo "shut down selenium grid"'
-   	     sh 'sudo docker-compose down'
-   	     //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StopAllServices'], useCustomDockerComposeFile: true])
-       }
-     }
+    post {
+		always {
+		echo 'selenium grid down'
+		sudo docker-compose down
+	}
+    
+    
+     //stage('selenium grid down') {
+       //steps {
+         //sh 'echo "shut down selenium grid"'
+   	     //sh 'sudo docker-compose down'
+   	     ////step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StopAllServices'], useCustomDockerComposeFile: true])
+       //}
+     //}
   }
 }
