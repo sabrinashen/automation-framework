@@ -21,7 +21,6 @@ pipeline {
       	//catchError {
             sh 'bundle install'
         		sh 'bundle exec parallel_rspec test/'
-        		archiveArtifacts artifacts: 'script/**', fingerprint: true
         //}
         //echo currentBuild.result
       }
@@ -40,6 +39,7 @@ pipeline {
 	always {
 		sh 'echo "selenium grid down"'
 		sh 'sudo docker-compose down'
+		archiveArtifacts artifacts: 'output/log/**', fingerprint: true
   	}
   }
 }
