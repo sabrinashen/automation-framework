@@ -12,7 +12,9 @@ pipeline {
   stages {
     stage('docker-compose up') {
       steps {
-        step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 5, service: 'chrome'], useCustomDockerComposeFile: true])
+        //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 5, service: 'chrome'], useCustomDockerComposeFile: true])
+      	sh 'sudo docker-compose up -d'
+      	sh 'sudo docker-compose scale chrome=5'
       	sh 'sudo docker ps -a'
       }
     }
@@ -25,11 +27,12 @@ pipeline {
       }
     }
     
-    // stage('selenium grid down') {
-    //   steps {
-    //     sh 'echo "shut down selenium grid"'
-    //     step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StopAllServices'], useCustomDockerComposeFile: true])
-    //   }
-    // }
+     stage('selenium grid down') {
+       steps {
+         sh 'echo "shut down selenium grid"'
+   	     sh 'sudo docker-compose down'
+   	     //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StopAllServices'], useCustomDockerComposeFile: true])
+       }
+     }
   }
 }
