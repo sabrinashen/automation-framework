@@ -13,7 +13,7 @@ pipeline {
     stage('docker-compose up') {
       steps {
         step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 5, service: 'chrome'], useCustomDockerComposeFile: true])
-      	sh 'docker ps -a'
+      	sh 'sudo docker ps -a'
       }
     }
       
