@@ -26,13 +26,6 @@ pipeline {
       }
     }
     
-    post {
-		always {
-		echo 'selenium grid down'
-		sudo docker-compose down
-	}
-    
-    
      //stage('selenium grid down') {
        //steps {
          //sh 'echo "shut down selenium grid"'
@@ -40,5 +33,11 @@ pipeline {
    	     ////step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StopAllServices'], useCustomDockerComposeFile: true])
        //}
      //}
+  }
+  
+  post {
+	always {
+	echo 'selenium grid down'
+	sudo docker-compose down
   }
 }
