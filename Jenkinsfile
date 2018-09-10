@@ -22,7 +22,7 @@ pipeline {
             sh 'bundle install'
         		sh 'bundle exec parallel_rspec test/'
         }
-        echo currentBuild.result
+        //echo currentBuild.result
       }
     }
     
