@@ -1,10 +1,12 @@
 pipeline {
-  agent { label 'first_docker' }
-  //agent any
+  //agent { label 'first_docker' }
+  agent any
   environment {
     // docker path: /usr/local/bin
     // bundle path: /Users/ericyang/.rbenv/shims
     PATH = "$PATH:/usr/local/bin:/Users/ericyang/.rbenv/shims"
+    //registry = “selenium/hub”
+    //registryCredential = ‘dockerhub’
   }
     
   stages {
