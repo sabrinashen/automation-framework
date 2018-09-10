@@ -22,7 +22,3 @@ describe "google_4" do
   end
   
 end
-
-
-
-

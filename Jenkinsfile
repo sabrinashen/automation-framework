@@ -18,8 +18,11 @@ pipeline {
       
     stage('run script') {
       steps {
-        sh 'bundle install'
-        sh 'bundle exec parallel_rspec test/'
+      	catchError {
+            sh 'bundle install'
+        		sh 'bundle exec parallel_rspec test/'
+        }
+        echo currentBuild.result
       }
     }
     
