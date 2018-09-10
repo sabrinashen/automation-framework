@@ -1,12 +1,9 @@
 pipeline {
-  //agent { label 'first_docker' }
   agent any
   environment {
     // docker path: /usr/local/bin
     // bundle path: /Users/ericyang/.rbenv/shims
     PATH = "$PATH:/usr/local/bin:/Users/ericyang/.rbenv/shims"
-    //registry = “selenium/hub”
-    //registryCredential = ‘dockerhub’
   }
     
   stages {
@@ -21,7 +18,6 @@ pipeline {
       
     stage('run script') {
       steps {
-        sh 'echo "run script - null steps"'
         sh 'bundle install'
         sh 'bundle exec parallel_rspec test/'
       }
