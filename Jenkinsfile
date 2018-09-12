@@ -16,13 +16,16 @@ pipeline {
       }
     }
       
-    stage('run script') {
+    stage('run script google') {
       steps {
-      	//catchError {
-            sh 'bundle install'
-        		sh 'bundle exec parallel_rspec test/'
-        //}
-        //echo currentBuild.result
+        sh 'bundle install'
+        	sh 'bundle exec parallel_rspec test/google/'
+      }
+    }
+    
+    stage('run script baidu') {
+      steps {
+        	sh 'bundle exec parallel_rspec test/baidu/'
       }
     }
     
