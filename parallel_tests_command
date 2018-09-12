@@ -1,0 +1,6 @@
+//will run google_3_spec.rb
+bundle exec parallel_rspec test/google/ test/baidu/ --suffix '_3_spec.rb$'
+
+
+//will run google_2_spec.rb and baidu_new_2_spec.rb and baidu_2_spec.rb
+bundle exec parallel_rspec test/google/ test/baidu/ --suffix '^*2_spec.rb$'
