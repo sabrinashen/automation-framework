@@ -16,16 +16,17 @@ pipeline {
       }
     }
       
-    stage('run script google') {
+    stage('run script') {
       steps {
-        sh 'bundle install'
-        	sh 'bundle exec parallel_rspec test/google/'
-      }
-    }
-    
-    stage('run script baidu') {
-      steps {
-        	sh 'bundle exec parallel_rspec test/baidu/'
+      	sh 'bundle install'
+      	parallel(
+               "google-module":{
+               	sh 'bundle exec parallel_rspec test/google/'
+               },
+               "baidu-module":{
+               	sh 'bundle exec parallel_rspec test/baidu/'
+               }
+        )
       }
     }
     
