@@ -13,12 +13,12 @@ pipeline {
       	sh 'sudo docker-compose up -d'
       	sh 'sudo docker-compose scale chrome=10'
       	sh 'sudo docker ps -a'
+      	sh 'bundle install'
       }
     }
       
     stage('run script') {
       steps {
-      	sh 'bundle install'
       	parallel(
                "google-module":{
                	sh 'bundle exec parallel_rspec test/google/'
