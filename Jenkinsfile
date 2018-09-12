@@ -11,7 +11,7 @@ pipeline {
       steps {
         //step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose.yml', option: [$class: 'StartService', scale: 5, service: 'chrome'], useCustomDockerComposeFile: true])
       	sh 'sudo docker-compose up -d'
-      	sh 'sudo docker-compose scale chrome=5'
+      	sh 'sudo docker-compose scale chrome=10'
       	sh 'sudo docker ps -a'
       }
     }
